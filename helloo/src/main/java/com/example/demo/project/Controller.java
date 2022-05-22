@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor // final 객체를 Constructor Injection 해줌. (Autowired 역할)
 public class Controller {
 
-    private  Repository1 ProjectRepository;
+    private  ProjectRepository ProjectRepository;
     
     @PostMapping
     public ProjectEntity put(@RequestParam Integer id, @RequestParam String content, @RequestParam Date due_date, @RequestParam Date meeting, @RequestParam String manager) {
