@@ -13,10 +13,7 @@ public class Controller {
 
     private  ProjectRepository ProjectRepository;
     
-    @PostMapping
-    public ProjectEntity put(@RequestParam Integer id, @RequestParam String content, @RequestParam Date due_date, @RequestParam Date meeting, @RequestParam String manager) {
-    	return ;
-    }
+   
     
     /**
      * 멤버 조회
