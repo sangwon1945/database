@@ -1,4 +1,4 @@
-package com.example.demo.project;
+package com.example.demo;
 
 import lombok.*;
 import java.util.Date;
