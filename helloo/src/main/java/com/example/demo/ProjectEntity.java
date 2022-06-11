@@ -8,14 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "project")
+@NoArgsConstructor
+
+@Getter
 public class ProjectEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,14 +40,12 @@ public class ProjectEntity {
 	@Column(name = "manager")
 	private String manager;
 
-	@Builder
-	public ProjectEntity (Integer id, String title, String content, Date due_date, Date meeting, String manager) { 
-		this.id = id; 
-		this.title = title;
-		this.content = content;
-		this.due_date = due_date;
-		this.meeting = meeting;
-		this.manager = manager;
+	public ProjectEntity (DtoProject dtoproject) { 
+		this.title = dtoproject.getTitle();
+		this.content = dtoproject.getContent();
+		this.due_date = dtoproject.getDue_date();
+		this.meeting = dtoproject.getMeeting();
+		this.manager = dtoproject.getManager();
 		}
 
 }
